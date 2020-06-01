@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Digital Clock</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="clock">
+		<div class="hour">
+			<div class="hr" id="hr"></div>
+		</div>
+		<div class="min">
+			<div class="mn" id="mn"></div>
+		</div>
+		<div class="sec">
+			<div class="sc" id="sc"></div>
+		</div>
+	</div>
+	<div class="footer">
+		<b>Copyright by Girish chaudhari</b>
+	</div>
+<script type="text/javascript">
+// 	const deg = 6;
+// 	const hr= document.querySelector('#hr');
+// 	const mn= document.querySelector('#mn');
+// 	const sc= document.querySelector('#sc');
+
+// 	setInterval(() => {
+// 	Let day = new Date();
+// 	Let hh = day.getHours() * 30;
+// 	Let mm = day.getMinutes() * deg;
+// 	Let ss = day.getSeconds() * deg;
+
+// 	hr.style.transform = `rotateZ(${(hh)+(mm/12)}deg)`;
+// 	mn.style.transform = `rotateZ(${mm}deg)`;
+// 	sc.style.transform = `rotateZ(${ss}deg)`;
+
+// })
+    const sec = document.querySelector(".sec");
+      const min = document.querySelector(".min");
+      const hr = document.querySelector(".hr");
+      setInterval(function(){
+        let time  = new Date();
+        let secs = time.getSeconds() * 6;
+        let mins = time.getMinutes() * 6;
+        let hrs = time.getHours() * 30;
+        sec.style.transform = `rotateZ(${secs}deg)`;
+        min.style.transform = `rotateZ(${mins}deg)`;
+        hr.style.transform = `rotateZ(${hrs+(mins/12)}deg)`;
+      });
+
+</script>
+</body>
+</html>
